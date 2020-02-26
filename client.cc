@@ -12,6 +12,7 @@ int main(int ac, char **av)
     }
     QDBusMessage msg = QDBusMessage::createSignal("/my/test/OCalculator", "my.test.ICalculator","newProduct");
     msg << 1.1;
+    QDBusConnection::sessionBus().send(msg);
     msg = QDBusMessage::createSignal("/my/test/OCalculator", "my.test.ICalculator","newQuotient");
     msg << 2.2;
     QDBusConnection::sessionBus().send(msg);
